@@ -1,0 +1,12 @@
+
+# build command
+docker build -t stk-service:0.1.0 .
+
+# run command
+docker run -d --rm -p 5000:5000 --name stk-service stk-service:0.1.0
+
+# save command
+docker save stk-service:0.1.0 -o stk-service.tar
+
+# load command
+docker load -i stk-service.tar
