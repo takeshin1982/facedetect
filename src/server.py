@@ -7,10 +7,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def root():
-    return jsonify(
-            {
-                'result': 'OK'
-            }), 200
+    m = import_module('PyTorch-YOLOv3.detect')
+    return m.execute()
 
 @app.route('/<userid>', methods=['DETECT'])
 def detect(userid):
